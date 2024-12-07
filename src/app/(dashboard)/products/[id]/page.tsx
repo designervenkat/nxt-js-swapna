@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation"
 
 type Products = {
   productName: string
@@ -8,11 +9,14 @@ type Products = {
 }
 
 export default async function ProductPage(
-  { params }: { params: Promise<{ id: string }> }) {
+  { params }: { params: Promise<{ id: number }> }) {
   
   const { id } = await params
 
   const res = await fetch(`https://672e2363229a881691ef1d2d.mockapi.io/products/${id}`)
+
+
+  if(id >= 4) return notFound()
 
   const data: Products = await res.json()
   

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,24 +10,35 @@ type Products = {
   id: string
 }
 
+type Data = {
+  data: Products[]
+}
+
 export default async function ProductsPage() {
 
-  const res = await fetch("https://672e2363229a881691ef1d2d.mockapi.io/products")
+  const res = await fetch("http://localhost:3000/api/products", {
+    cache: "no-cache"
+  })
 
-  const data: Products[] = await res.json()
+  const data: Data = await res.json()
+
+  console.log(data);
+  
 
   return (
-    <div className='h-screen grid grid-cols-1 place-content-center'>
+    <div className='h-screen grid grid-cols-1 place-content-start p-20'>
       
 
-      <div className=' flex flex-col items-center justify-center'>
+      <div className=' flex flex-col items-start justify-start'>
         <h2 className='mb-10'>Product List Page</h2>
 
         <ul>
 
-          {data.map((item) => (
+          {data.data?.map((item) => (
             <Link key={item.id} href={`/products/${item.id}`}>
-              <li > {item.productName}</li>
+              <li className='my-5'>
+                {item.productName}
+              </li>
             </Link>            
           ))}
 
