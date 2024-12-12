@@ -1,11 +1,27 @@
+import Image from "next/image";
+import code from "./../../public/code-unsplash.jpg"
+import conway from "./../../public/conway-unsplash.jpg"
+
 export default function Home() {
   return (
-    <div className="p-20 w-full max-w-screen-md mx-auto grid place-content-center gap-y-4">
+    <>
+      <Image
+     
+        src={code}
+        alt="image"
+        sizes="(max-width: 768px) 100vw, 33vw"
+    />
     
-        <h2>Home Page</h2>
-        
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, recusandae? Hic minima natus voluptates autem explicabo assumenda nam. Adipisci harum temporibus excepturi et aperiam magni.</p>
-         
-    </div>
+    <Image
+      
+        src={conway}
+        alt="image"
+        quality={80}
+        priority
+
+      />
+
+ 
+    </>
   );
 }
