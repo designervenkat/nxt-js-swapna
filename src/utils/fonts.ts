@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
 import {Playwrite_US_Trad, Roboto, Space_Mono} from "next/font/google"
 
-export const playwrite = Playwrite_US_Trad({
-  display: "swap"
-})
+// export const playwrite = Playwrite_US_Trad({
+//   display: "swap"
+// })
 
 export const roboto = Roboto({
   weight: ["900", "100"],

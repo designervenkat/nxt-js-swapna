@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import "./globals.css";
 import { geistMono, geistSans, roboto } from "@/utils/fonts";
+import Script from "next/script";
+
+
 
 
 export const metadata: Metadata = {
@@ -16,12 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* className={`${geistSans.variable} ${geistMono.variable}  antialiased`} */}
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-black antialiased`}
       >
         <Header />
         {children}
+
+
+    
+
+
+       
       </body>
     </html>
   );
