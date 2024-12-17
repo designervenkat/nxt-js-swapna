@@ -1,27 +1,11 @@
-import Image from "next/image";
-import code from "./../../public/code-unsplash.jpg"
-import conway from "./../../public/conway-unsplash.jpg"
-
+import { space_mono } from "@/utils/fonts";
+import {} from 'next/font/google'
 export default function Home() {
   return (
-    <>
-      <Image
-     
-        src={code}
-        alt="image"
-        sizes="(max-width: 768px) 100vw, 33vw"
-    />
-    
-    <Image
+    <div className="h-96 grid place-content-center">
+
+      <h2 className={`${space_mono.className} font-normal`}>This is Google Fonts</h2>
       
-        src={conway}
-        alt="image"
-        quality={80}
-        priority
-
-      />
-
- 
-    </>
+    </div>
   );
 }
